@@ -17,6 +17,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
+
 public class MicrophoneSignalGenerator : signalGenerator {
 
   [DllImport("SoundStageNative")]
@@ -26,7 +27,7 @@ public class MicrophoneSignalGenerator : signalGenerator {
   [DllImport("SoundStageNative")]
   public static extern void MicFunction(float[] a, float[] b, int length, float val);
 
-  AudioClip micClip;
+  //AudioClip micClip 
   AudioSource source;
   float[] sharedBuffer;
   bool activated = false;
@@ -62,17 +63,17 @@ public class MicrophoneSignalGenerator : signalGenerator {
     source.Stop();
     Microphone.End(Microphone.devices[curMicID]);
     curMicID = num;
-    micClip = new AudioClip();
+   // micClip = null;
 
-    micClip = Microphone.Start(Microphone.devices[num], true, 1, 44100);
+    //micClip = Microphone.Start(Microphone.devices[num], true, 1, 44100);
 
     yield return null;
-    if (micClip != null) {
+    /*if (micClip != null) {
       source.clip = micClip;
       source.loop = true;
       while (!(Microphone.GetPosition(null) > 0)) { }
       source.Play();
-    }
+    }*/
 
     yield return null;
 

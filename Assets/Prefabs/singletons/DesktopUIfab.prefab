@@ -2789,6 +2789,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloomIntensity: 0.05
+  shader: {fileID: 0}
+  lensDirtTexture: {fileID: 0}
+  lensDirtIntensity: 0.05
+  inputIsHDR: 0
 --- !u!114 &114000011239281124
 MonoBehaviour:
   m_ObjectHideFlags: 1
